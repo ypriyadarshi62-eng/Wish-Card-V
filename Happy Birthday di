@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Wishing Card" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday to My Cutie Vidya Didu!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --soft-pink: #ffb8e0;
+            --soft-blue: #b8e1ff;
+            --soft-purple: #d9b8ff;
+            --soft-green: #b8ffc9;
+            --soft-yellow: #fff9b8;
+            --text-color: #444;
+            --shadow: rgba(255, 184, 224, 0.3);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff9fd 0%, #f5f9ff 100%);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, var(--soft-pink), var(--soft-blue));
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .header-content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .header-content p {
+            font-size: 1.3rem;
+            color: #fff;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .birthday-icon {
+            font-size: 2.5rem;
+            color: var(--soft-yellow);
+            margin: 0 10px;
+            animation: spin 8s linear infinite;
+        }
+
+        /* Portrait Gallery */
+        .portrait-section {
+            margin-bottom: 60px;
+            animation: slideUp 1s ease-out;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--soft-pink);
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(to right, var(--soft-blue), var(--soft-purple));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .portrait {
+            width: 280px;
+            height: 350px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            background: white;
+        }
+
+        .portrait:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 30px var(--shadow);
+        }
+
+        .portrait-img {
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+            transition: transform 0.7s ease;
+        }
+
+        .portrait:hover .portrait-img {
+            transform: scale(1.1);
+        }
+
+        .portrait-caption {
+            padding: 15px;
+            text-align: center;
+            background: white;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .portrait-caption h3 {
+            color: var(--soft-purple);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        /* Description Section */
+        .description-section {
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.9), rgba(255, 248, 255, 0.9));
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px var(--shadow);
+            animation: slideUp 1.2s ease-out;
+        }
+
+        .description {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quality {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .quality:hover {
+            transform: translateX(10px);
+        }
+
+        .quality-icon {
+            font-size: 2.5rem;
+            margin-right: 25px;
+            color: var(--soft-blue);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .quality-content h3 {
+            color: var(--soft-pink);
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+
+        /* Scratch Cards */
+        .scratch-section {
+            margin-bottom: 60px;
+            animation: slideUp 1.4s ease-out;
+        }
+
+        .scratch-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .scratch-card {
+            width: 300px;
+            height: 200px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .scratch-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--soft-green), var(--soft-yellow));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.7);
+            font-weight: bold;
+        }
+
+        .scratch-message {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--soft-pink), var(--soft-purple));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .scratch-instruction {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: var(--soft-purple);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(to right, var(--soft-pink), var(--soft-blue));
+            border-radius: 20px;
+            color: white;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px var(--shadow);
+            animation: fadeIn 1.6s ease-out;
+        }
+
+        .heart {
+            color: #ff5e7d;
+            animation: heartbeat 1.5s infinite;
+            margin: 0 5px;
+        }
+
+        .footer-text {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .portrait {
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            .quality {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .quality-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .scratch-card {
+                width: 90%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-content">
+                <h1>Happy Birthday to My Cutie Vidya Didu! <i class="fas fa-birthday-cake birthday-icon"></i></h1>
+                <p>Today we celebrate the most Cutest, loving and caring person in our life. This website is dedicated to you and all the joy you bring to the world. You are the best! not only as my sister but also a best daughter for uncle and aunty, best younger sister for bhaiya amd didi and also a best friend to all of your friends. You are th best...no bestest gift ever that i got from God. Thans a lot di for being my elder sister. and once again Happiest birthday didu</p>
+            </div>
+        </header>
+
+        <!-- Portrait Gallery -->
+        <section class="portrait-section">
+            <h2 class="section-title">Portraits of You</h2>
+            <div class="gallery">
+                <div class="portrait">
+                    <img src="https://images.unsplash.com/photo-1593081891731-f4d1c6c5a2d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Anime Style Portrait" class="portrait-img">
+                    <div class="portrait-caption">
+                        <h3>Your Anime Spirit</h3>
+                        <p>Always full of life and energy</p>
+                    </div>
+                </div>
+                
+                <div class="portrait">
+                    <img src="https://images.unsplash.com/photo-1578632749014-ca77efd052eb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Cartoon Style Portrait" class="portrait-img">
+                    <div class="portrait-caption">
+                        <h3>Cartoon Charm</h3>
+                        <p>Bringing smiles everywhere you go</p>
+                    </div>
+                </div>
+                
+                <div class="portrait">
+                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Fantasy Style Portrait" class="portrait-img">
+                    <div class="portrait-caption">
+                        <h3>Fantasy Heart</h3>
+                        <p>A beautiful soul in a magical world</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Description Section -->
+        <section class="description-section">
+            <h2 class="section-title">Your Beautiful Qualities</h2>
+            <div class="description">
+                <div class="quality">
+                    <div class="quality-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="quality-content">
+                        <h3>True & Genuine</h3>
+                        <p>You are the most authentic person I know. You never pretend to be someone you're not, and your honesty is one of your most admirable qualities. You stay true to yourself and your values, no matter what.</p>
+                    </div>
+                </div>
+                
+                <div class="quality">
+                    <div class="quality-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="quality-content">
+                        <h3>Kind & Compassionate</h3>
+                        <p>Your kindness knows no bounds. You have this incredible ability to sense when someone is hurting and you always know just what to say or do to make them feel better. Your compassion touches everyone around you.</p>
+                    </div>
+                </div>
+                
+                <div class="quality">
+                    <div class="quality-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="quality-content">
+                        <h3>Caring & Supportive</h3>
+                        <p>You are always there for the people you love and also for me whenever i was alone you had always supported me. Whether it's a small gesture or being there during difficult times, your caring nature makes you the most reliable and supportive sister anyone could have and for that reason i am the luckiest brother in this worl to have you as my elder sister.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scratch Cards -->
+        <section class="scratch-section">
+            <h2 class="section-title">Scratch for Birthday Wishes</h2>
+            <div class="scratch-cards">
+                <div class="scratch-card" id="card1">
+                    <div class="scratch-overlay">SCRATCH ME!</div>
+                    <div class="scratch-message">"You make the world brighter just by being in it. Happy Birthday Didu!"</div>
+                </div>
+                
+                <div class="scratch-card" id="card2">
+                    <div class="scratch-overlay">SCRATCH ME!</div>
+                    <div class="scratch-message">"Sisters like you are most rarest treasures that one could have. So grateful you're mine🥹🥹!"</div>
+                </div>
+                
+                <div class="scratch-card" id="card3">
+                    <div class="scratch-overlay">SCRATCH ME!</div>
+                    <div class="scratch-message">"Wishing you a day as wonderful as you are. Love you always didi!"</div>
+                </div>
+            </div>
+            <p class="scratch-instruction">Click and drag on the cards to reveal your special birthday messages!</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p class="footer-text">Made with <span class="heart"><i class="fas fa-heart"></i></span> for the best sister in this whole universe</p>
+            <p>Happy Birthday Didu! May all your dreams come true this year and always. May you achieve all the success that you deserve.....and you deserve a lot.... seriously. So always be happy and fearless in every situations because I, your younger brother will always behind you and support you in every conditions</p>
+            <p><i class="fas fa-gift"></i> Wishing you endless joy and happiness! <i class="fas fa-gift"></i></p>
+        </footer>
+    </div>
+
+    <script>
+        // Scratch Card Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const scratchCards = document.querySelectorAll('.scratch-card');
+            
+            scratchCards.forEach(card => {
+                let isDrawing = false;
+                let lastX = 0;
+                let lastY = 0;
+                const ctx = document.createElement('canvas').getContext('2d');
+                
+                // Create canvas overlay
+                const canvas = document.createElement('canvas');
+                const rect = card.getBoundingClientRect();
+                canvas.width = card.offsetWidth;
+                canvas.height = card.offsetHeight;
+                canvas.style.position = 'absolute';
+                canvas.style.top = '0';
+                canvas.style.left = '0';
+                canvas.style.cursor = 'pointer';
+                
+                // Set canvas context
+                ctx.canvas.width = canvas.width;
+                ctx.canvas.height = canvas.height;
+                ctx.fillStyle = '#ddd';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.globalCompositeOperation = 'destination-out';
+                
+                // Add canvas to card
+                card.appendChild(canvas);
+                
+                // Mouse events
+                canvas.addEventListener('mousedown', (e) => {
+                    isDrawing = true;
+                    [lastX, lastY] = [e.offsetX, e.offsetY];
+                });
+                
+                canvas.addEventListener('mousemove', (e) => {
+                    if (!isDrawing) return;
+                    
+                    ctx.beginPath();
+                    ctx.lineWidth = 30;
+                    ctx.lineCap = 'round';
+                    ctx.moveTo(lastX, lastY);
+                    ctx.lineTo(e.offsetX, e.offsetY);
+                    ctx.stroke();
+                    
+                    [lastX, lastY] = [e.offsetX, e.offsetY];
+                    
+                    // Check if enough has been scratched
+                    checkScratched(canvas, card);
+                });
+                
+                canvas.addEventListener('mouseup', () => {
+                    isDrawing = false;
+                });
+                
+                canvas.addEventListener('mouseout', () => {
+                    isDrawing = false;
+                });
+                
+                // Touch events for mobile
+                canvas.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    isDrawing = true;
+                    const touch = e.touches[0];
+                    const rect = canvas.getBoundingClientRect();
+                    [lastX, lastY] = [touch.clientX - rect.left, touch.clientY - rect.top];
+                });
+                
+                canvas.addEventListener('touchmove', (e) => {
+                    e.preventDefault();
+                    if (!isDrawing) return;
+                    
+                    const touch = e.touches[0];
+                    const rect = canvas.getBoundingClientRect();
+                    const x = touch.clientX - rect.left;
+                    const y = touch.clientY - rect.top;
+                    
+                    ctx.beginPath();
+                    ctx.lineWidth = 40;
+                    ctx.lineCap = 'round';
+                    ctx.moveTo(lastX, lastY);
+                    ctx.lineTo(x, y);
+                    ctx.stroke();
+                    
+                    [lastX, lastY] = [x, y];
+                    
+                    // Check if enough has been scratched
+                    checkScratched(canvas, card);
+                });
+                
+                canvas.addEventListener('touchend', () => {
+                    isDrawing = false;
+                });
+            });
+            
+            // Function to check if enough of the card has been scratched
+            function checkScratched(canvas, card) {
+                const ctx = canvas.getContext('2d');
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const pixels = imageData.data;
+                let transparentPixels = 0;
+                
+                for (let i = 3; i < pixels.length; i += 4) {
+                    if (pixels[i] === 0) transparentPixels++;
+                }
+                
+                const totalPixels = pixels.length / 4;
+                const scratchedPercent = (transparentPixels / totalPixels) * 100;
+                
+                // If more than 40% is scratched, reveal the full message
+                if (scratchedPercent > 40) {
+                    canvas.style.opacity = '0';
+                    canvas.style.transition = 'opacity 0.5s ease';
+                    
+                    // Add a celebration effect
+                    card.style.transform = 'scale(1.05)';
+                    card.style.transition = 'transform 0.3s ease';
+                    setTimeout(() => {
+                        card.style.transform = 'scale(1)';
+                    }, 300);
+                }
+            }
+            
+            // Add floating animation to portraits on hover
+            const portraits = document.querySelectorAll('.portrait');
+            portraits.forEach(portrait => {
+                portrait.addEventListener('mouseenter', () => {
+                    const randomRotate = (Math.random() * 4) - 2; // Between -2 and 2 degrees
+                    portrait.style.transform = `translateY(-10px) rotate(${randomRotate}deg)`;
+                });
+                
+                portrait.addEventListener('mouseleave', () => {
+                    portrait.style.transform = 'translateY(0) rotate(0deg)';
+                });
+            });
+            
+            // Add confetti effect on page load
+            setTimeout(() => {
+                createConfetti();
+            }, 1000);
+        });
+        
+        // Simple confetti effect
+        function createConfetti() {
+            const colors = ['#ffb8e0', '#b8e1ff', '#d9b8ff', '#b8ffc9', '#fff9b8'];
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'absolute';
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = Math.random() * 10 + 5 + 'px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.top = '-50px';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.zIndex = '9999';
+                confetti.style.opacity = '0.8';
+                
+                document.body.appendChild(confetti);
+                
+                // Animate confetti falling
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.8 },
+                    { transform: `translateY(${window.innerHeight + 100}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                // Remove confetti after animation
+                animation.onfinish = () => {
+                    confetti.remove();
+                };
+            }
+        }
+    </script>
+</body>
+</html>
+```
